@@ -556,6 +556,8 @@ header a:hover {
 
 /*------------start the education part--------------*/
 
+/*------------start the education part--------------*/
+
 .education1 {
     text-align: center;
 }
@@ -594,26 +596,37 @@ header a:hover {
     }
 }
 
-
 .timeline1 {
     margin: 1em auto;
-    max-width: 100%;
+    max-width: 90%; /* Adjust for responsiveness */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background: linear-gradient(45deg, #d80b23, #7a68fe, #fc9628, #60cbb2);
     background-size: 300% 300%;
     animation: color 20s ease-in-out infinite;
 }
 
 .checkpoint1 {
-    max-width: 30%;
-    padding-top: 2em;
-    padding-bottom: 1em;
+    max-width: 80%; /* Adjust for responsiveness */
+    width: 100%; 
+    padding: 2em 0;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .checkpoint1 div {
     border: 2px solid #201e1e;
     border-radius: 1em;
     padding: 1.5em;
+    background-color: #fff; /* Ensure readability */
+    max-width: 90%;
+    width: fit-content;
+    text-align: center;
+    position: relative;
 }
 
 .checkpoint1 div:hover {
@@ -625,83 +638,54 @@ header a:hover {
     color: #161616;
 }
 
-.checkpoint1:nth-child(odd) {
-    border-left: 3px solid #121111;
-    padding-left: 2em;
-    transform: translateX(37em);
-}
-
+.checkpoint1:nth-child(odd),
 .checkpoint1:nth-child(even) {
-    border-right: 3px solid #121111;
-    padding-right: 2em;
-    transform: translateX(15.01em);
+    transform: none; /* Disable transform to center the content */
 }
 
 .checkpoint1:nth-child(odd)::before,
 .checkpoint1:nth-child(even)::before {
     content: '';
     background: #090909;
-    width: 2.01em;
-    height: 3px;
+    width: 3px;
+    height: 20px;
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    top: -10px; /* Adjust position for responsiveness */
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-
-.checkpoint1:nth-child(odd)::before {
-    left: 0;
-}
-
-.checkpoint1:nth-child(even)::before {
-    right: 0;
-}
-
-.checkpoint1:nth-child(odd) div::before,
-.checkpoint1:nth-child(even) div::before {
+.checkpoint1 div::before {
     content: '';
     background: #e9bdbd;
     box-shadow: 0 0 0.5em #1a5ab5;
     width: 0.8em;
     height: 0.8em;
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    top: -1em;
+    left: 50%;
+    transform: translateX(-50%);
     border-radius: 50%;
 }
 
-.checkpoint1:nth-child(odd) div::before {
-    left: -0.5em;
-}
-
-.checkpoint1:nth-child(even) div::before {
-    right: -0.5em;
-}
-
-
 @media screen and (max-width: 1150px) {
     .timeline1 {
-        width: 80vw;
+        max-width: 95vw; /* Allow more space for smaller screens */
+        padding: 0 1em;
     }
 
-    .timeline1 .checkpoint1 {
-        width: 100%;
-        transform: none;
-        padding-left: 0;
-        padding-right: 0;
-        border: none;
+    .checkpoint1 {
+        max-width: 100%;
     }
 
-    .timeline1 .checkpoint1::before {
-        width: 3px;
-        height: 4em;
-        top: -2em;
+    .checkpoint1::before {
+        top: -1em;
         left: 50%;
-        transform: translateX((-50%));
+        transform: translateX(-50%);
     }
 
-    .timeline1 .checkpoint1 div::before {
-        top: -0.5em;
+    .checkpoint1 div::before {
+        top: -0.8em;
         left: 50%;
         transform: translateX(-50%);
     }
@@ -711,14 +695,23 @@ header a:hover {
 
 
 
+/*------------ends the education part--------------*/
 
 
+
+
+
+/*------------start the skills part--------------*/
 /*------------start the skills part--------------*/
 
 .container2 {
     width: 100%;
     min-height: 10vh;
     padding: 10px 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .container2 .main-title {
@@ -726,7 +719,6 @@ header a:hover {
     margin: 0px auto;
     text-align: center;
 }
-
 
 .container2 .main-title h1 {
     font-weight: normal;
@@ -765,11 +757,14 @@ header a:hover {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap; /* Enables wrapping for smaller screens */
     margin-top: 70px;
+    gap: 20px; /* Adds spacing between columns */
 }
 
 .row2 .col1 {
-    flex-basis: 30%;
+    flex-basis: 30%; /* Allows flexible column width */
+    text-align: center; /* Centers column content */
 }
 
 .row2 .sub-title h2 {
@@ -808,14 +803,13 @@ header a:hover {
     text-transform: uppercase;
 }
 
-
 .progress-bar {
     position: relative;
-    width: 50%;
+    width: 70%; /* Adjusted for better scaling */
     height: 5px;
     background-color: #3d3d3d;
     border-radius: 15px;
-    margin-bottom: 20px;
+    margin: 0 auto 20px auto; /* Centers the bar */
 }
 
 .progress-bar::after {
@@ -843,7 +837,6 @@ header a:hover {
     }
 }
 
-
 .progress-line::after {
     content: '';
     position: absolute;
@@ -856,29 +849,50 @@ header a:hover {
     background-color: #82101b;
 }
 
-@media(max-width:768px) {
+/* Media Queries for Smaller Screens */
+@media (max-width: 768px) {
     .container2 {
         padding: 30px 8%;
     }
-}
-
-@media(max-width: 568px) {
-    .container2 .row2 {
-        flex-direction: column;
-    }
-
-    .container2 .main-title h1 {
-        font-size: 36px;
-    }
 
     .container2 .row2 {
+        flex-direction: column; /* Stacks columns vertically */
+        align-items: center; /* Centers content */
         margin-top: 30px;
     }
 
-    .row2 .col1:nth-child(2) {
-        margin-top: 20px;
+    .container2 .main-title h1 {
+        font-size: 28px; /* Adjust font size */
+    }
+
+    .row2 .col1 {
+        flex-basis: 100%; /* Full width for smaller screens */
+    }
+
+    .progress-bar {
+        width: 80%; /* Scales progress bar for smaller screens */
     }
 }
+
+@media (max-width: 568px) {
+    .container2 {
+        padding: 20px 5%;
+    }
+
+    .container2 .main-title h1 {
+        font-size: 24px; /* Further adjust font size */
+    }
+
+    .row2 .col1 {
+        margin-bottom: 20px; /* Adds spacing between columns */
+    }
+
+    .progress-bar {
+        width: 90%; /* Adjusts progress bar width */
+    }
+}
+
+/*------------ends the skills part--------------*/
 
 /*------------ends the skills part--------------*/
 
